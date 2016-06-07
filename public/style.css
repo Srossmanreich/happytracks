@@ -1,0 +1,43 @@
+
+/*Homepage*/
+
+.cityscape { 
+	background: url(images/cityscape.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.maintext {
+	max-width: 50%;
+	text-align: center;
+	margin: auto;
+	margin-top: 15%;
+}
+
+.maintexth1, .navbarlist li {
+	font-family: 'Arvo'; 
+	color: white;
+}
+
+.imgplaceholder {
+	max-width: 120px;
+}
+
+.navbarlist {
+	text-decoration: none;
+}
+
+.navbarlist li {
+	display: inline;
+}
+
+.rightnav {
+	float: right;
+}
+
+.rightnav li {
+	padding: 3%;
+}
+
