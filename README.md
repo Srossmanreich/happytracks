@@ -1,2 +1,2 @@
-# jetpack app
-A web app for personal professional accountability
+# happytracks
+A web app that will help you record, track, and improve your daily happiness
