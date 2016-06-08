@@ -14,36 +14,48 @@
 	background-size: cover;
 }
 
-.maintext {
-	max-width: 50%;
-	text-align: center;
-	margin: auto;
-	margin-top: 15%;
-}
-
-.maintexth1, .navbarlist li {
-	font-family: 'Arvo'; 
-	color: white;
-}
-
 .imgplaceholder {
 	max-width: 120px;
 }
 
 .navbarlist {
-	text-decoration: none;
+	list-style-type: none;
 }
 
 .navbarlist li {
 	display: inline;
 }
 
+.leftnav {
+	float: left;
+	max-width: 50%;
+}
+
 .rightnav {
 	float: right;
+	width: 60%;
+	text-align: right;
+	margin-right: 5%;
+	margin-top: 3px;
 }
 
 .rightnav li {
-	padding: 3%;
+	padding: 15px;
+	display: inline-block;
+}
+
+.maintext {
+	position: relative;
+	clear: both;
+	max-width: 50%;
+	text-align: center;
+	margin: auto;
+	padding-top: 10%;
+}
+
+.maintexth1, .navbarlist li {
+	font-family: 'Arvo'; 
+	color: white;
 }
 
 .scroll-chevron {
