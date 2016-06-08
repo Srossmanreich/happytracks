@@ -6,44 +6,72 @@
 	margin: 0;
 }
 
-.cityscape { 
-	background: url(images/cityscape.jpg) no-repeat center center fixed; 
+.backimage { 
+	background: url(images/ocean.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
 
-.maintext {
-	max-width: 50%;
-	text-align: center;
-	margin: auto;
-	margin-top: 15%;
-}
-
-.maintexth1, .navbarlist li {
-	font-family: 'Arvo'; 
-	color: white;
-}
-
 .imgplaceholder {
 	max-width: 120px;
 }
 
+.navbar {
+	position: fixed;
+	width: 100%;
+}
+
 .navbarlist {
-	text-decoration: none;
+	list-style-type: none;
 }
 
 .navbarlist li {
 	display: inline;
 }
 
+.leftnav {
+	float: left;
+}
+
 .rightnav {
 	float: right;
+	text-align: right;
+	margin-top: 5px;
+	margin-right: 50px;
 }
 
 .rightnav li {
-	padding: 3%;
+	padding: 15px;
+	display: inline-block;
+}
+
+.navitem {
+	border-radius: 20%;
+}
+
+.navitem:hover {
+	background-color: white;
+	color: black;
+}
+
+.maintext {
+	position: relative;
+	clear: both;
+	max-width: 50%;
+	text-align: center;
+	margin: auto;
+	padding-top: 10%;
+}
+
+.maintexth1 {
+	font-size: 2em;
+}
+
+.maintexth1, .navbarlist li {
+	font-family: 'Arvo'; 
+	color: white;
 }
 
 .scroll-chevron {
@@ -55,7 +83,12 @@
 }
 
 #mainsection2 {
-	background-color: orange;
+	background-color: #0099cc;
+	height: 100%;
+}
+
+#mainsection3 {
+	background-color: white;
 	height: 100%;
 }
 
