@@ -1,6 +1,11 @@
 
 /*Homepage*/
 
+#mainsection1 {
+	height: 100%;
+	margin: 0;
+}
+
 .cityscape { 
 	background: url(images/cityscape.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -40,4 +45,19 @@
 .rightnav li {
 	padding: 3%;
 }
+
+.scroll-chevron {
+	position: absolute;
+	left: 40%;
+	bottom: 8px;
+	width:20%;
+	margin: auto;
+}
+
+#mainsection2 {
+	background-color: orange;
+	height: 100%;
+}
+
+
 
