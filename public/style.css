@@ -103,18 +103,8 @@
     margin: 0 auto;
 }
 
-.login-block h1 {
-    text-align: center;
-    color: #000;
-    font-size: 18px;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-family: 'Arvo';
-}
-
 .login-block input {
-    width: 60%;
+    width: 48%;
     height: 42px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -124,20 +114,15 @@
     font-family: 'Arvo';
     padding: 0 20px 0 50px;
     outline: none;
+    display: inline!important;
 }
 
 #username {
 	float: left;
-	display: inline;
 }
 
 #password {
 	float: right;
-	display: inline;
-}
-
-.inline {
-	display: inline-block;
 }
 
 .login-block input#username {
@@ -165,7 +150,8 @@
 }
 
 .login-block button {
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
     height: 40px;
     background: #0099cc;
     box-sizing: border-box;
@@ -182,6 +168,15 @@
 
 .login-block button:hover {
     background: #0099cc;
+}
+
+.signup {
+	margin-top: 1%;
+	text-align: center;
+	margin-left: 30%;
+	width: 40%;
+	margin-bottom: 0;
+	font-family: 'Arvo';
 }
 
 
