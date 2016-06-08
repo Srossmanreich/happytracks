@@ -92,19 +92,80 @@
 	height: 100%;
 }
 
+/*signup*/
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * the following styles are auto-applied to elements with
+ * v-transition="modal" when their visiblity is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter, .modal-leave {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 /*login*/
 
 .login-block {
     width: 640px;
     padding: 20px;
-    background: #fff;
     border-radius: 5px;
-    border-top: 5px solid #0099cc;
     margin: 0 auto;
 }
 
 .login-block input {
-    width: 48%;
+    width: 50%;
+    margin-left: 25%;
     height: 42px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -114,15 +175,7 @@
     font-family: 'Arvo';
     padding: 0 20px 0 50px;
     outline: none;
-    display: inline!important;
-}
-
-#username {
-	float: left;
-}
-
-#password {
-	float: right;
+    display: block
 }
 
 .login-block input#username {
@@ -167,7 +220,9 @@
 }
 
 .login-block button:hover {
-    background: #0099cc;
+    background: white;
+    color: gray;
+    border: 1px solid white;
 }
 
 .signup {
@@ -177,6 +232,15 @@
 	width: 40%;
 	margin-bottom: 0;
 	font-family: 'Arvo';
+	color: white;
+}
+
+.signup a {
+	color: white;
+}
+
+.signup a:hover {
+	color: #0099cc;
 }
 
 
