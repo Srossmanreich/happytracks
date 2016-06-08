@@ -6,8 +6,8 @@
 	margin: 0;
 }
 
-.cityscape { 
-	background: url(images/cityscape.jpg) no-repeat center center fixed; 
+.backimage { 
+	background: url(images/ocean.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -16,6 +16,11 @@
 
 .imgplaceholder {
 	max-width: 120px;
+}
+
+.navbar {
+	position: fixed;
+	width: 100%;
 }
 
 .navbarlist {
@@ -28,20 +33,27 @@
 
 .leftnav {
 	float: left;
-	max-width: 50%;
 }
 
 .rightnav {
 	float: right;
-	width: 60%;
 	text-align: right;
-	margin-right: 5%;
-	margin-top: 3px;
+	margin-top: 5px;
+	margin-right: 50px;
 }
 
 .rightnav li {
 	padding: 15px;
 	display: inline-block;
+}
+
+.navitem {
+	border-radius: 20%;
+}
+
+.navitem:hover {
+	background-color: white;
+	color: black;
 }
 
 .maintext {
@@ -51,6 +63,10 @@
 	text-align: center;
 	margin: auto;
 	padding-top: 10%;
+}
+
+.maintexth1 {
+	font-size: 2em;
 }
 
 .maintexth1, .navbarlist li {
@@ -67,7 +83,12 @@
 }
 
 #mainsection2 {
-	background-color: orange;
+	background-color: #0099cc;
+	height: 100%;
+}
+
+#mainsection3 {
+	background-color: white;
 	height: 100%;
 }
 
