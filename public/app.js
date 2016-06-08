@@ -26,6 +26,9 @@
 
 var app = new Vue({
   el: "body",
+  data: {
+    showModal: false
+  },
   methods: {
     onDownArrowClick: ev => {
       zenscroll.intoView(document.querySelector("#mainsection2"))
@@ -33,3 +36,13 @@ var app = new Vue({
   }
 })
 
+Vue.component('modal', {
+  template: '#modal-template',
+  props: {
+    show: {
+      type: Boolean,
+      required: true,
+      twoWay: true    
+    }
+  }
+})
