@@ -23,18 +23,12 @@
 
 // })
 
-var arrow = new Vue({
-  
-  el: '#home-arrow',
-  
-  created: function(){
-  },
-  
+
+var app = new Vue({
+  el: "body",
   methods: {
-    onClick: ev => {
-      
-        
+    onDownArrowClick: ev => {
+      zenscroll.intoView(document.querySelector("#mainsection2"))
     }
   }
-
 })
