@@ -32,17 +32,9 @@ var app = new Vue({
   methods: {
     onDownArrowClick: ev => {
       zenscroll.intoView(document.querySelector("#mainsection2"))
-    }
-  }
-})
-
-Vue.component('modal', {
-  template: '#modal-template',
-  props: {
-    show: {
-      type: Boolean,
-      required: true,
-      twoWay: true    
+    },
+    modalSignup: ev => {
+    	app.showModal = true;
     }
   }
 })
