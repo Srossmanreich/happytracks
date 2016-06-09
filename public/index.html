@@ -53,20 +53,20 @@
 					</div>
 					<div class="rightnav">
 						<li class="navitem">Features</li>
-						<li class="navitem" id="show-modal" @click="modalSignup">Sign up</li>
+						<li class="navitem" class="show-modal" @click="modalSignup">Sign up</li>
 					</div>
 				</ul>
 			</div>
 
 			<div class="maintext">
-				<h1 class="maintexth1">Record your happiness. Check your happiness. Improve your happiness.</h1>
+				<h1 class="maintexth1">Record your happiness. Track your happiness. Improve your happiness.</h1>
 			</div>
 
 			<div class="login-block">
 				<input type="text" value="" placeholder="Email" id="email" />
 				<input type="password" value="" placeholder="Password" id="password" />
     			<button>Login</button>
-    			<p class="signup">Don't have an account? <a href="#">Sign up!</a></p>
+    			<p class="signup">Don't have an account? <a href="#" class="show-modal" @click="modalSignup">Sign up!</a></p>
 			</div>
 
 			<div @click="onDownArrowClick" aria-hidden="true" class="scroll-chevron pure-hidden-xs pure-hidden-sm" id="home-arrow">
