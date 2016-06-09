@@ -107,11 +107,13 @@
 }
 
 .modal-wrapper {
-  display: table-cell;
+  position: relative;
+  margin-top: 200px;
   vertical-align: middle;
 }
 
 .modal-container {
+  position: relative;
   width: 300px;
   margin: 0px auto;
   padding: 20px 30px;
@@ -119,11 +121,12 @@
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .modal-header h3 {
-  margin-top: 0;
+  margin-top: 10;
+  margin-bottom: 0;
+  text-align: center;
   color: #0099cc;
   font-family: 'Arvo';
 }
@@ -160,8 +163,6 @@
 .close-modal {
 	position: absolute;
 	padding: 0;
-	margin-left: 320px;
-	top: 210px;
 	background-color: #0099cc;
 	color: white;
 	width: 25px;
