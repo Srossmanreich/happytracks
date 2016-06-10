@@ -5,6 +5,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="style.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.2/vue-resource.min.js"></script>
 		<title>happytracks</title>
 
 	</head>
@@ -17,19 +18,13 @@
 				<span @click="onClick">{{message}}</span>
 			</div> -->
 
-			<div class="modal-mask" v-if="showModal" transition="modal">
+			<div class="modal-mask" v-if="showModal" transition="modal" @click="showModal = false">
 
 			    <div class="modal-wrapper">
 
-			      <div class="modal-container">
+			      <div class="modal-container" @click.stop>
 
 			        <div class="modal-header">
-
-			          <div class="close-modal" @click="showModal = false">
-			          	<spot>X</spot>
-			          </div>
-
-			          <br>
 
 			          <slot class="modal-header-text"name="header">
 			            <h3>Create an account:</h3>
@@ -37,16 +32,22 @@
 			        </div>
 
 			        <div class="modal-body signup-block">
-			        	<input type="text" value="" placeholder="First name" class="name" />
-			        	<input type="text" value="" placeholder="Last name" class="name" />
-						<input type="text" value="" placeholder="Email" id="email" />
-						<input type="password" value="" placeholder="Password" class="password" />
-						<input type="password" value="" placeholder="Confirm password" class="password" />
-    					<button>Create</button>
+			        	<input type="text" v-model="registration.first" placeholder="First name" class="name" />
+			        	<input type="text" v-model="registration.last" placeholder="Last name" class="name" />
+						<input type="text" v-model="registration.email"placeholder="Email" id="email" />
+						<input type="password" v-model="registration.password" placeholder="Password" class="password" />
+						<input type="password" v-model="registration.confirm" placeholder="Confirm password" class="password" />
+
+						<div style="color: red" v-if="registration.password != registration.confirm && registration.confirm != null">
+							<p>Password doesn't match!</p>
+						</div>
+
+    					<button @click="onCreateUser">Create</button>
 					</div>
 
 			      </div>
 			    </div>
+
 			  </div>
 
 			<div class="navbar">

@@ -27,11 +27,22 @@
 var app = new Vue({
   el: "body",
   data: {
-    showModal: false
+    showModal: false,
+    registration: {
+      email: null,
+      first: null,
+      last: null,
+      password: null,
+      confirm: null
+    }
   },
   methods: {
     onDownArrowClick: ev => {
       zenscroll.intoView(document.querySelector("#mainsection2"))
+    },
+    onCreateUser: ev => {
+      app.$http.post("/api/users", app.registration)
+          .then(output => console.log(output));
     },
     modalSignup: ev => {
     	app.showModal = true;

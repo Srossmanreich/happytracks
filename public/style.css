@@ -121,6 +121,7 @@
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
+  overflow: hidden;
 }
 
 .modal-header h3 {
@@ -133,6 +134,7 @@
 
 .modal-body {
   margin: 20px 0;
+  width: 300px;
 }
 
 .modal-default-button {
@@ -159,17 +161,6 @@
 }
 
 /*signup form*/
-
-.close-modal {
-	position: absolute;
-	padding: 0;
-	background-color: #0099cc;
-	color: white;
-	width: 25px;
-	text-align: center;
-	font-family: 'Arvo';
-	border-radius: 25px;
-}
 
 .signup-block {
     width: 640px;
