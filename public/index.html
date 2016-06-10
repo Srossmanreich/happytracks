@@ -5,6 +5,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="style.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.2/vue-resource.min.js"></script>
 		<title>happytracks</title>
 
 	</head>
@@ -41,7 +42,7 @@
 							<p>Password doesn't match!</p>
 						</div>
 
-    					<button>Create</button>
+    					<button @click="onCreateUser">Create</button>
 					</div>
 
 			      </div>

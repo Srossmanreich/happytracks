@@ -40,6 +40,10 @@ var app = new Vue({
     onDownArrowClick: ev => {
       zenscroll.intoView(document.querySelector("#mainsection2"))
     },
+    onCreateUser: ev => {
+      app.$http.post("/api/users", app.registration)
+          .then(output => console.log(output));
+    },
     modalSignup: ev => {
     	app.showModal = true;
     }
