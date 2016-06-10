@@ -31,11 +31,16 @@
 			        </div>
 
 			        <div class="modal-body signup-block">
-			        	<input type="text" value="" placeholder="First name" class="name" />
-			        	<input type="text" value="" placeholder="Last name" class="name" />
-						<input type="text" value="" placeholder="Email" id="email" />
-						<input type="password" value="" placeholder="Password" class="password" />
-						<input type="password" value="" placeholder="Confirm password" class="password" />
+			        	<input type="text" v-model="registration.first" placeholder="First name" class="name" />
+			        	<input type="text" v-model="registration.last" placeholder="Last name" class="name" />
+						<input type="text" v-model="registration.email"placeholder="Email" id="email" />
+						<input type="password" v-model="registration.password" placeholder="Password" class="password" />
+						<input type="password" v-model="registration.confirm" placeholder="Confirm password" class="password" />
+
+						<div style="color: red" v-if="registration.password != registration.confirm && registration.confirm != null">
+							<p>Password doesn't match!</p>
+						</div>
+
     					<button>Create</button>
 					</div>
 

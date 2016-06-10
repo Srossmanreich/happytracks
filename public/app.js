@@ -27,7 +27,14 @@
 var app = new Vue({
   el: "body",
   data: {
-    showModal: false
+    showModal: false,
+    registration: {
+      email: null,
+      first: null,
+      last: null,
+      password: null,
+      confirm: null
+    }
   },
   methods: {
     onDownArrowClick: ev => {
