@@ -18,7 +18,7 @@
 				<span @click="onClick">{{message}}</span>
 			</div> -->
 
-			<div class="modal-mask" v-if="showModal" transition="modal" @click="showModal = false">
+			<div class="modal-mask" v-if="showModal" transition="modal" @click="showModal = false" v-cloak>
 
 			    <div class="modal-wrapper">
 
@@ -32,14 +32,18 @@
 			        </div>
 
 			        <div class="modal-body signup-block">
+			        	<div class="reg-error"> {{registrationError.first}}</div>
 			        	<input type="text" v-model="registration.first" placeholder="First name" class="name" />
+			        	<div class="reg-error"> {{registrationError.last}}</div>
 			        	<input type="text" v-model="registration.last" placeholder="Last name" class="name" />
+			        	<div class="reg-error"> {{registrationError.email}}</div>
 						<input type="text" v-model="registration.email"placeholder="Email" id="email" />
+						<div class="reg-error"> {{registrationError.password}}</div>
 						<input type="password" v-model="registration.password" placeholder="Password" class="password" />
 						<input type="password" v-model="registration.confirm" placeholder="Confirm password" class="password" />
 
-						<div style="color: red" v-if="registration.password != registration.confirm && registration.confirm != null">
-							<p>Password doesn't match!</p>
+						<div class="reg-error" v-if="registration.password != registration.confirm && registration.confirm != null">
+							<p>Password doesn't match</p>
 						</div>
 
     					<button @click="onCreateUser">Create</button>

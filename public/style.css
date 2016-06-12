@@ -1,3 +1,6 @@
+body{
+  font-family: 'Arvo';
+}
 
 /*Homepage*/
 
@@ -70,7 +73,6 @@
 }
 
 .maintexth1, .navbarlist li {
-	font-family: 'Arvo'; 
 	color: white;
 }
 
@@ -129,7 +131,6 @@
   margin-bottom: 0;
   text-align: center;
   color: #0099cc;
-  font-family: 'Arvo';
 }
 
 .modal-body {
@@ -177,7 +178,6 @@
     border: 1px solid #ccc;
     margin-bottom: 20px;
     font-size: 14px;
-    font-family: 'Arvo';
     padding: 0 20px 0 50px;
     outline: none;
     display: block
@@ -228,7 +228,6 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
-    font-family: 'Arvo';
     outline: none;
     cursor: pointer;
 }
@@ -237,6 +236,15 @@
     background: white;
     color: gray;
     border: 1px solid #0099cc;
+}
+
+[v-cloak] { display:none; }
+
+.reg-error{
+  color: red;
+  text-align: center;
+  width: 40%;
+  margin-bottom: 10px;
 }
 
 /*login*/
@@ -257,7 +265,6 @@
     border: 1px solid #ccc;
     margin-bottom: 20px;
     font-size: 14px;
-    font-family: 'Arvo';
     padding: 0 20px 0 50px;
     outline: none;
     display: block
@@ -299,7 +306,6 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
-    font-family: 'Arvo';
     outline: none;
     cursor: pointer;
 }
@@ -316,7 +322,6 @@
 	margin-left: 30%;
 	width: 40%;
 	margin-bottom: 0;
-	font-family: 'Arvo';
 	color: white;
 }
 
