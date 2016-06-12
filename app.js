@@ -12,6 +12,17 @@ router.get("/test", function*() {
 });
 
 router.post("/api/users", function*() {
+	
+	this.checkBody('email').isEmail("Please enter a real email");
+	this.checkBody('first').notEmpty("Please enter your first name");
+	this.checkBody('last').notEmpty("Please enter your first name");
+	this.checkBody('password').notEmpty("Please enter a password");
+
+	if (this.errors) {
+        this.body = this.errors;
+        return;
+    }
+
 	let {email, first, last, password, confirm} = this.request.body;
 
 	this.body = yield r.table("users").insert({

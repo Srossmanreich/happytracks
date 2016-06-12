@@ -1,29 +1,3 @@
-
-// var app = new Vue({
-  
-//   el: '#app',
-  
-//   data: {
-//     message: 'Hello world'
-//   },
-  
-//   created: function(){
-//   },
-  
-//   methods: {
-//   	onClick: ev => {
-//   		fetch('/test')
-//   			.then(output => output.json())
-//   			.then(output =>{
-//   				output.test
-//   				app.message = output.test
-//   			})
-//   	}
-//   }
-
-// })
-
-
 var app = new Vue({
   el: "body",
   data: {
@@ -46,6 +20,32 @@ var app = new Vue({
     },
     modalSignup: ev => {
     	app.showModal = true;
+      document.querySelector('.modal-mask').style.display = "block"
     }
   }
 })
+
+
+// var app = new Vue({
+  
+//   el: '#app',
+  
+//   data: {
+//     message: 'Hello world'
+//   },
+  
+//   created: function(){
+//   },
+  
+//   methods: {
+//    onClick: ev => {
+//      fetch('/test')
+//        .then(output => output.json())
+//        .then(output =>{
+//          output.test
+//          app.message = output.test
+//        })
+//    }
+//   }
+
+// })
