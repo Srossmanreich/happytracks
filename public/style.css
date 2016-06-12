@@ -238,10 +238,13 @@ body{
     border: 1px solid #0099cc;
 }
 
-#conf-pw{
+[v-cloak] { display:none; }
+
+.reg-error{
   color: red;
   text-align: center;
   width: 40%;
+  margin-bottom: 10px;
 }
 
 /*login*/

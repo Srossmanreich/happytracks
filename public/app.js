@@ -8,7 +8,14 @@ var app = new Vue({
       last: null,
       password: null,
       confirm: null
-    }
+    },
+    registrationError: {
+      email: null,
+      first: null,
+      last: null,
+      password: null
+    },
+    registrationSuccess: false
   },
   methods: {
     onDownArrowClick: ev => {
@@ -16,11 +23,17 @@ var app = new Vue({
     },
     onCreateUser: ev => {
       app.$http.post("/api/users", app.registration)
-          .then(output => console.log(output));
+          .then(output => {
+            console.log(output);
+            if (!output.data.success) {
+              app.registrationError = Object.assign({}, ...output.data.errors)
+            } else {
+              app.registrationSuccess = true
+            }
+          });
     },
     modalSignup: ev => {
     	app.showModal = true;
-      document.querySelector('.modal-mask').style.display = "block"
     }
   }
 })

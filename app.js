@@ -5,7 +5,7 @@ const router = require("koa-router")();
 const r = require("rethinkdbdash")({db: "happytracks"});
 
 app.use(require("koa-bodyparser")());
-// app.use(require("koa-validate")());
+require("koa-validate")(app);
 
 router.get("/test", function*() {
 	this.body = yield r.db("rethinkdb").table("stats");
@@ -19,7 +19,7 @@ router.post("/api/users", function*() {
 	this.checkBody('password').notEmpty("Please enter a password");
 
 	if (this.errors) {
-        this.body = this.errors;
+        this.body = {success: false, errors: this.errors};
         return;
     }
 
