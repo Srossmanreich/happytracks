@@ -18,21 +18,24 @@ var app = new Vue({
     registrationSuccess: false
   },
   methods: {
-    onDownArrowClick: ev => {
+    onDownArrowClick(ev) {
       zenscroll.intoView(document.querySelector("#mainsection2"))
     },
-    onCreateUser: ev => {
-      app.$http.post("/api/users", app.registration)
-          .then(output => {
-            console.log(output);
-            if (!output.data.success) {
-              app.registrationError = Object.assign({}, ...output.data.errors)
-            } else {
-              app.registrationSuccess = true
+    onCreateUser(ev) {
+      this.$http.post("/api/users", this.registration).then(output => {
+
+            if (output.data.success) {
+              this.registrationSuccess = true;
+              localStorage.setItem("token", output.data.token);
+              localStorage.setItem("user", JSON.stringify(output.data.user[0]));
+              window.location.href = "/dashboard";
+            }
+            else {
+              this.registrationError = Object.assign({}, ...output.data.errors)
             }
           });
     },
-    modalSignup: ev => {
+    modalSignup(ev) {
     	app.showModal = true;
     }
   }
