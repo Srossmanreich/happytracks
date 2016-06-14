@@ -5,18 +5,18 @@ Happytracks is currently being developed --- check back for updates over the nex
 
 ##To-dos
 
-+Update landing page and overall brand (color, logo, etc.)
-+Create more detailed wireframes
-+Conduct open-ended functionality brainstorm with select group of potential users (happytips?)
-+Add email confirmation to sign up
-+Add functionality on dashboard page (display user data)
-+Add user engagement functionality (journaling, etc.)
-+Add email reminders (web app only) to remind users to engage daily
-+Create iOS app to coincide with web experience
-+Integrate growth-hacking tools to track user funnel
++ Update landing page and overall brand (color, logo, etc.)
++ Create more detailed wireframes
++ Conduct open-ended functionality brainstorm with select group of potential users (happytips?)
++ Add email confirmation to sign up
++ Add functionality on dashboard page (display user data)
++ Add user engagement functionality (journaling, etc.)
++ Add email reminders (web app only) to remind users to engage daily
++ Create iOS app to coincide with web experience
++ Integrate growth-hacking tools to track user funnel
 
 ##Stretches
 
-+Deep learning to suggest happiness improvements
-+Android app
-+Broader use cases (e.g., professional development type stuffg)
++ Deep learning to suggest happiness improvements
++ Android app
++ Broader use cases (e.g., professional development type stuffg)
