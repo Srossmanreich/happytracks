@@ -14,7 +14,7 @@ router.get("/test", function*() {
 	this.body = yield r.db("rethinkdb").table("stats");
 });
 
-router.get('/api/login'), function*() {
+router.get("/api/login", function*() {
 	this.checkBody('email').isEmail("Please enter a real email");
 	this.checkBody('email').notEmpty("Please enter your email");
 	this.checkBody('password').notEmpty("Please enter your password");
@@ -55,7 +55,7 @@ router.get('/api/login'), function*() {
 		token: jwt.sign(email, config.jwtSecret)
 	};
 
-}
+});
 
 router.post("/api/users", function*() {
 	this.checkBody('email').isEmail("Please enter a real email");
