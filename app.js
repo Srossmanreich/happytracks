@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt-then");
 const app = require("koa")();
 const router = require("koa-router")();
 const jwt = require("koa-jwt");
-const r = require("rethinkdbdash")({db: "happytracks"});
+const r = require("rethinkdbdash")({db: "happytracks", host: "rethinkdb-stable"});
 
 const config = require("./config");
 
@@ -14,47 +14,39 @@ router.get("/test", function*() {
 	this.body = yield r.db("rethinkdb").table("stats");
 });
 
-router.get("/api/login", function*() {
+router.post("/api/login", function*() {
 	this.checkBody('email').isEmail("Please enter a real email");
 	this.checkBody('email').notEmpty("Please enter your email");
 	this.checkBody('password').notEmpty("Please enter your password");
 
 	if (this.errors) {
-        this.body = {success: false, errors: this.errors};
-        return;
-    }
-
-    let {email, password} = this.request.body;
-    let loginUser = {
-		email: email,
-		password: yield bcrypt.hash(password)
-	};
-
-	let checkUser = yield r.table("users")
-						   .getAll(email, {index: "email"})
-						   .count().eq(0);
-
-	if (checkUser) {
+    this.body = {success: false, errors: this.errors};
+    return;
+  }
+  
+  let {email, password} = this.request.body;
+  
+	let user = yield r.table("users")
+										 .getAll(email, {index: "email"})(0)
+										 .default(null);
+	
+	if (!user) {
 		this.body = {success: false, errors: [{email: "User does not exist with that email"}]};
 		return;
 	}
 
-	let checkUserPassword = yield r.table("users")
-						   .filter({email: email}).getField("password")
-
-	if (loginUser.password !== checkUserPassword) {
+	if (!(yield bcrypt.compare(password, user.password))) {
 		this.body = {success: false, errors: [{password: "The password you entered does not match the password for that user"}]};
 		return;
 	}
 
-	let data = yield r.table("users").filter({email: email}).without("password");
+	delete user.password;
 
 	this.body = {
 		success: true,
-		user: data,
+		user: user,
 		token: jwt.sign(email, config.jwtSecret)
 	};
-
 });
 
 router.post("/api/users", function*() {

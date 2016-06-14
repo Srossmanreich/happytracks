@@ -31,11 +31,11 @@ var app = new Vue({
       zenscroll.intoView(document.querySelector("#mainsection2"))
     },
     onLoginUser(ev){
-      this.$http.get("/api/login", this.login).then(output => {
+      this.$http.post("/api/login", this.login).then(output => {
           if (output.data.success) {
             this.loginSuccess = true;
             localStorage.setItem("token", output.data.token);
-            localStorage.setItem("user", JSON.stringify(output.data.user[0]));
+            localStorage.setItem("user", JSON.stringify(output.data.user));
             window.location.href = "/dashboard";
           }
           else {
