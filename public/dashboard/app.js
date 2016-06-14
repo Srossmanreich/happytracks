@@ -23,7 +23,7 @@ var app = new Vue({
 		},
 		onLogoutUser(ev) {
       		localStorage.clear()
-      		window.location.href = '/'
+      		window.location.href = "/";
     	}
 	}
 })

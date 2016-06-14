@@ -71,9 +71,10 @@
 			</div>
 
 			<div class="login-block">
-				<input type="text" value="" placeholder="Email" id="email" />
-				<input type="password" value="" placeholder="Password" id="password" />
-    			<button>Login</button>
+				<input type="text" v-model="login.email" value="" placeholder="Email" id="email" />
+				<input type="password" v-model="login.password" value="" placeholder="Password" id="password" />
+    			<button @click="onLoginUser">Login</button>
+
     			<p class="signup">Don't have an account? <a href="#" class="show-modal" @click="modalSignup">Sign up!</a></p>
 			</div>
 
