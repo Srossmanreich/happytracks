@@ -20,7 +20,11 @@ var app = new Vue({
 	methods: {
 		token() {
 			return localStorage.getItem("token");
-		}
+		},
+		onLogoutUser(ev) {
+      		localStorage.clear()
+      		window.location.href = "/";
+    	}
 	}
 })
 

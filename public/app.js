@@ -2,6 +2,15 @@ var app = new Vue({
   el: "body",
   data: {
     showModal: false,
+    login: {
+      email: null,
+      password: null
+    },
+    loginSuccess: false,
+    loginError: {
+      email: null,
+      password: null
+    },
     registration: {
       email: null,
       first: null,
@@ -21,6 +30,19 @@ var app = new Vue({
     onDownArrowClick(ev) {
       zenscroll.intoView(document.querySelector("#mainsection2"))
     },
+    onLoginUser(ev){
+      this.$http.get("/api/login", this.login).then(output => {
+          if (output.data.success) {
+            this.loginSuccess = true;
+            localStorage.setItem("token", output.data.token);
+            localStorage.setItem("user", JSON.stringify(output.data.user[0]));
+            window.location.href = "/dashboard";
+          }
+          else {
+            this.loginError = Object.assign({}, ...output.data.errors)
+          }
+      })
+    },
     onCreateUser(ev) {
       this.$http.post("/api/users", this.registration).then(output => {
 
@@ -37,7 +59,7 @@ var app = new Vue({
     },
     modalSignup(ev) {
     	app.showModal = true;
-    }
+    },
   }
 })
 
