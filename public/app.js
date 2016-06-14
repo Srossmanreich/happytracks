@@ -37,7 +37,7 @@ var app = new Vue({
     },
     modalSignup(ev) {
     	app.showModal = true;
-    }
+    },
   }
 })
 
